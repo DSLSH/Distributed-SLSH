@@ -80,7 +80,7 @@ These scripts execute the code through `ahe_main.py`.
 
 These scripts assume that 5 nodes and an orchestrator are available and the content of the repository
 is present in the folder `home/ubuntu/code`.
-Moreover, the two datasets mentioned above should be stored in `distributed_SLSH/datasets/`.
+Moreover, the two datasets mentioned above should be stored in `distributed_SLSH/datasets/` and the script `abp_dataset_utils.py` must have been run (`cd scripts/; python3 abp_dataset_utils.py`) to pickle the dataset and its queries.
 
 The scripts are in folder `scripts/` and should be executed from there. A more detailed description follows.
 
