@@ -38,7 +38,7 @@ run `python setup.py install` to install prerequisites.
 For the user's convenience, we provide a `sample_main.py` file containing trivial examples of how
 both the Orchestrator and the nodes are meant to be used and exposing their interfaces.
 
-*Sample script:*
+**Sample script:**
 By running `run_sample_main.sh` (in the root folder), the user can execute both a node and the Orchestrator
 running the aforementioned examples on the local machine. Please keep on reading for the examples' description
 and for instructions on their manual execution/generalization.
