@@ -15,6 +15,18 @@ the code for a single node. Our implementation of the SLSH algorithm is containe
 `worker_node/SLSH`.
 
 
+Datasets for AHE Prediction
+------------
+
+The datasets used for "Distributed Stratified Locality Sensitive Hashing for
+critical event prediction in the cloud" are available at:
+
+- https://figshare.com/s/1cddb007dce488d33ef9
+- https://figshare.com/s/421640a9a2d177cabe6e
+
+Dataset descriptions are available within the links.
+
+
 How to run
 ------------
 
@@ -57,6 +69,33 @@ Results logging
 The execution results are stored in the folder `results`, which contains `accuracy-testing.txt` having a line per execution
 reporting accuracy, recall, and MCC. Folders `results/intranode` and `results/distributed` will
 contain a file per execution with detailed query-by-query results.
+
+
+AHE Prediction scripts
+-----------------------
+
+In order to replicate the experimental results shown in "Distributed Stratified Locality Sensitive Hashing for
+critical event prediction in the cloud", we provide scripts both for running the experiments and plotting them.
+These scripts execute the code through `ahe_main.py`.
+
+These scripts assume that 5 nodes and an orchestrator are available and the content of the repository
+is present in the folder `home/ubuntu/code`.
+Moreover, the two datasets mentioned above should be stored in `distributed_SLSH/datasets/`.
+
+The scripts are in folder `scripts/` and should be executed from there. A more detailed description follows.
+
+`run_speedMCC.py` runs the speed vs. MCC tradeoff experiments. The script should be run from a client machine,
+while its results will be stored on the orchestrator machine, in file`results/accuracy-testing.txt`.
+The point chosen for the SLSH onset should be manually marked by the user by appending
+`_base` to the corresponding log line.
+When this is done, executing `plot_speedMCC.py` on the orchestrator machine will yield the scatter plot.
+
+`run_strongscaling.py` runs the strong scaling plot. It should be run from a client machine.
+Running `plot_strongscaling.py` from the orchestrator yields the strong scaling plots for the two datasets.
+
+*Remark:*
+In order to make the scripts run, the user should configure the commands according to her/his folder structure or
+at least change the machines IP's passed to the functions within the`run_<experiment>.py` scripts.
 
 
 Tests
